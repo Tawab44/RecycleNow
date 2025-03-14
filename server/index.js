@@ -13,8 +13,14 @@ const { MongoClient } = require('mongodb');
 dotenv.config();
 const app = express();
 app.use(express.json());
+//changes
+//app.use(cors({
+ //   origin: 'http://localhost:3000', // Replace with your frontend's URL
+  //  credentials: true
+//}));
 app.use(cors({
-    origin: 'http://localhost:3000', // Replace with your frontend's URL
+    origin: [''], // Replace with your frontend's URL
+    nethods:["POST","GET"],
     credentials: true
 }));
 
