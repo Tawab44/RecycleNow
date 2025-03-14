@@ -11,7 +11,8 @@ function Home() {
 //Tawab
     useEffect(() => {
         if (!user) {
-            axios.get('http://localhost:3001/user', { withCredentials: true })
+            //axios.get('http://localhost:3001/user', { withCredentials: true })
+            axios.get('https://recycle-now-front.vercel.app/user', { withCredentials: true })
                 .then(response => {
                     if (response.data.user) {
                         setUser(response.data.user);
