@@ -11,10 +11,12 @@ function Login({ setIsLoggedIn, isLoggedIn }) {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/login", { email, password }, { withCredentials: true })
+      //.post("http://localhost:3001/login", { email, password }, { withCredentials: true })
+      .post("https://recycle-now-front.vercel.app/login", { email, password }, { withCredentials: true })
       .then((result) => {
         if (result.data === "Success") {
-          axios.get("http://localhost:3001/user", { withCredentials: true }).then((response) => {
+          //axios.get("http://localhost:3001/user", { withCredentials: true }).then((response) => {
+          axios.get("https://recycle-now-front.vercel.app/user", { withCredentials: true }).then((response) => {
             if (response.data.user) {
               setIsLoggedIn(true);
               navigate("/search", { state: { user: response.data.user } });
