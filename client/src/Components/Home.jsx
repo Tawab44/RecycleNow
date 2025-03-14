@@ -8,7 +8,7 @@ function Home() {
     const navigate = useNavigate();
     const [user, setUser] = useState(location.state?.user);
     const [loading, setLoading] = useState(!user);
-
+//Tawab
     useEffect(() => {
         if (!user) {
             axios.get('http://localhost:3001/user', { withCredentials: true })
